@@ -1,11 +1,20 @@
-## Review of Some Topics in Data Science
+## Review and Demo Topics in Data Science
 Jupyter notebooks that combine code, visualizations, and examples.
 
 ![](linear_log_regr.gif)
 
 Content so far:
 
-- Hypothesis Testing
-- Statistical Power calculations
+### Statistics
+- Hypothesis testing
+- Statistical power calculations
 - Linear Regression and Logistic Regression
+
+### Data Manipulation
 - SQL and pandas comparison
+
+### Machine Learning
+- Gradient Descent
+
+### Data Manipulation
+- Comparing pandas and SQL 
