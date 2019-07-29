@@ -2,19 +2,21 @@
 Jupyter notebooks that combine code, visualizations, and examples.
 
 ![](linear_log_regr.gif)
+![](poisson.png)
 
-Content so far:
+### Content so far:
 
-### Statistics
+#### Statistics
+- Probability Problems
 - Hypothesis testing
 - Statistical power calculations
 - Linear Regression and Logistic Regression
 
-### Data Manipulation
+#### Data Manipulation
 - SQL and pandas comparison
 
-### Machine Learning
+#### Machine Learning
 - Gradient Descent
 
-### Data Manipulation
+#### Data Manipulation
 - Comparing pandas and SQL 
