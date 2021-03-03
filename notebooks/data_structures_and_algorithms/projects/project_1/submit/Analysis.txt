@@ -1,0 +1,172 @@
+Task0
+-----
+O(1): Output size is fixed and not a function of input size.
+
+### Pseudocode: Index into list to get first (or last) element.
+
+### Notes
+Taking a slice from a list has complexity of O(k) where k is the slice size.
+In this case, we are taking a slice of size 1 from each from two lists.
+
+Reverse-indexing should also have the same speed, because the only additional
+requirement to count from the end of a list is that you know the length of
+the list. Length is an attribute of a list object that the computer simply
+looks up, rather than calculating on the fly.
+
+The complexity is of order zero, and computational speed should not change
+as a function of the list size(s).
+
+
+Task1: Count unique phone numbers
+-----
+O(n**2): Quadratic function of input size.
+
+### Pseudocode:
+Create result set
+For each record in calls.csv and texts.csv: O(n)
+  index into list to assign sender/caller and receiver/callee O(2)
+  add sender/caller and receiver/callee to a result set O(n)
+Return result set
+### End pseudocode
+
+## Notes:
+The worst-case scenario is that every attempt to add an element to a set
+(hash table) results in a hash collision. This is extremely unlikely in practice.
+Using a result *list* rather than a result *set* would have made it more efficient
+to simply append an element (worst case = O(1)), but checking to see
+if a duplicate exists would still be linear (worst case = O(n)), resulting in
+a quadratic overall speed efficiency.
+
+
+Task2: Find longest total call duration
+-----
+O(n**2): Quadratic function of input size.
+
+### Pseudocode
+Create duration_dict...
+  ... where each key is a unique telephone number and each value is the total
+  duration of all calls where that unique tel number is caller *or* callee.
+
+For record (list) in csv: # O(n)
+  index into list three times (caller, callee, call duration) # O(3)
+  for both sending and receiving numbers: # O(2)
+    look up phone number in result dict if entry doesn't exist, create it # O(n)
+    add call duration to total duration # O(1)
+    update duration value in duration_dict # O(n)
+
+For item in duration_dict:  # O(n)
+  if duration is longest encountered so far: O(1)
+    store number and duration as result O(1)
+Return result
+### End pseudocode
+
+## Notes
+The worst-case scenario is that calling the .get() method on a dict results in a
+hash collision every time.  Much like with set membership/containment, this is
+extremely unlikely in practice. The same thing is possible with updating the
+total duration value in the duration dict. The average speed efficiency case
+for .get() and for `dict[k] = v` is O(1) (i.e., constant),  so the speed
+complexity for the script as a whole would be more like O(n), on average, i.e.,
+a linear function of the input.
+
+Task3 - Part A: Find unique callees for Bangalore callers
+--------------
+O(x**2): Quadratic function of input size.
+
+Define func find_prefix() for a telephone number: # n = max length of tel num
+  If num contains a space and starts with 7, 8, or 9: # O(n)
+    prefix is the first four numbers
+    Else: Error
+  Elif number starts with 140:
+    prefix = 140
+  Elif number begins with open-paren:
+    split number at close-paren # O(nm) where n=len(str) and m=len(separator)
+    index into first element of list created by split
+    strip out leading open-paren
+    prefix = what's left
+  Else Error
+  Assert that the prefix is a string, for good measure
+  Return prefix
+
+Define func to return prefixes of callees for all bangalore callers:
+  create empty set of prefixes
+  for record in callers.csv: # O(n)
+    index into record to get caller # O(1)
+    if caller has banaglore prefix:
+      index into record to get callee O(1)
+      use find_prefix() func on callee #Worst case is landline?
+      add prefix to set of callee prefixes # O(n)
+  convert set of prefixes to a list
+  sort that list # O(n log n)
+  return that list
+
+## Notes
+Worst-case scenario: all callers are from bangalore and all recipient numbers
+are landlines, because then need to use string methods to split and strip.
+Also, the same thing applies when adding prefixes to a set...
+officially, the worst-case scenario is O(n), but in reality the speed complexity
+is more like O(1), on average.
+I'm not sure about the complexity of converting a set to a list. Probably also
+O(n).
+
+Then, to sort at the end, we use the built-in method sorted(), which has
+complexity n*log(n). Python uses Timsort, which is basically merge sort,
+with insertion sort used to find "shortcuts" where available. It seems Timsort is
+never going to be slower than merge sort, which has complexity of  O(n log n).
+The reasons for that seem to delve into advanced math and analysis
+of algorithms, but basically it has to do with a divide-and-conquer
+strategy to break the problem into smaller subproblems of the same type and then
+combine sub-solutions. I think I get the basics from Wikipedia, but I am sure we
+will cover the details more in this course.
+If we assume worst-case, the quadratic portion is the bottleneck. Otherwise,
+the sorting is the bottleneck, which would make the time complexity
+O(n log n), where speed is a quasilinear function of input size.
+
+
+Task3 - Part B: Count number of Bangalore-to-Bangalore calls
+--------------
+O(n): Linear function of input size.
+### Pseudocode
+For record in calls.csv O(n):
+  Index into first element in record to get calling number # O(1)
+  Slice into calling number to check for bangalore prefix. # O(5)
+    If calling number has bangalore prefix: # O(5)
+      Index into second element in record to get callee number # O(1)
+      If callee number also has bangalore prefix: # O(5)
+        add to "Yes" count. # O(1)
+      Else:
+        add to "No" count # O(1)
+Divide calls to Bangalore by total calls from Bangalore O(1)
+Multiply by 100 to get percentage. # O(1)
+Round # O(3)
+### End pseudocode
+
+## Notes:
+Part B code runs through the entire calls.csv once.
+The slicing, comparing, and if/else statements within the for-loop only add a constant
+amount of complexity.
+The code only does the arithmetic to calculate the rounded percentage once,
+on the final result. This is also constant O(1).
+
+
+Task 4: Identify telemarketing suspects
+------
+O(n**2): quadratic relationship between input and speed efficiency
+
+Create set of suspects
+Create set of non-suspects (whitelist)
+For record in texts.csv: # O(n)
+  add sender and recipient to whitelist set # O(n)
+for record in calls.csv: # O(n)
+  assign caller, callee # O(2)
+  add callee to whitelist set # O(n)
+  if callee in suspects: # O(n)
+    remove callee from suspects # O(1) Not sure about this.
+  if caller not in whitelist set: # O(n)
+    add caller to suspects # O(n)
+Convert suspects set to list
+Sort list of suspects O(n log n)
+
+## Notes
+Again, this would be quasilinear in the average case, because the bottleneck
+would be sorting the list at the end.
