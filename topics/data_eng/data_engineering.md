@@ -75,7 +75,8 @@ Ingestion
 - Semi-structured: Flexible schema: XML, JSON
 - Unstructured: No schema -  video, audio
 
-From Nanodegree
+***
+# Overview
 
 Data Engineering comprises all engineering and operational tasks required to make data available for the end-user, whether for the purposes of analytics, model building, app development, etc.
 Take raw data, do work to it, and deliver a clean dataset to whoever needs it.
@@ -93,19 +94,19 @@ Explore/Transform: cleaning anomaly detection, and prep.
 in some ways, a blend of a data scientist and a software engineer.
 core role: data warehouses, data lakes, and data pipelines
 
-common activities:
+#### common activities:
 - ingest dataset
 - build and maintain warehouse
 - create a data pipeline, create an analytics
-debug data quality issues, optimize queries, design databases
-they do some amount of analytics and thus occasionally perform aggregations, but
-airflow: status of pipelines
-look at metrics
-build in pipeline, presto or spark
-most of the day is spent writing
-try not to get too lost in tools.
-focus on a couple of big names. airflow, redshift, spark, presto
-tooling isnt standardized. better to be deep in a couple of important tools rather than broad across many tools
+- debug data quality issues, optimize queries, design databases
+- they do some amount of analytics and thus occasionally perform aggregations, but not their main focus
+- airflow: status of pipelines
+- look at metrics
+- build  pipeline, presto or spark
+- most of the day is spent writing code
+- try not to get too lost in tools.
+- focus on a couple of big names. airflow, redshift, spark, presto
+- tooling isn't standardized. better to be deep in a couple of important tools rather than broad across many tools
 
 Databases: A database is a structured repository or collection of data that is stored and retrieved electronically for use in applications. Data can be stored, updated, or deleted from a database.
 
@@ -129,6 +130,8 @@ process to support business and user applications
 - Iterative process
 - Important for everyone who deals with data
 
+Data engineering focuses on creating the physical data model in relational and nonrelational databases
+
 ## Relational Model
 - Organizes data into one or more tables (or "relations") of columns and rows with a unique key identying each row.
 - Generally each table represents one "entity" type such as *customer* or *product*
@@ -145,7 +148,7 @@ Common type (roughly in order of enterprise management):
 - Ability to do JOINS
 - Ability to do aggregations and analytics
 - Smaller data volumes
-- Easier to change business queries
+- Easy to change business requirements on data
 - Flexibility for queries
 - Modeling the data not modeling not the queries
 - Secondary indexes available
@@ -155,9 +158,69 @@ Common type (roughly in order of enterprise management):
   - Isolation: transaction sare processed independently and securely, order does not matter. rows will lock until transaction is complete
   - Durability: completed transactions are saved even in case of system failure.  Once it has been *committed*, it will remain comitted. Effects are recorded in memory.
 
+### When Not to Use a realational DB
+- Have large amounts of data. they are not distributed. can only scale vertically
+need to be able to store diferent types of data formats
+need high thoughput -- fast reads and fast writes
+need flexible schemas - nov every column has to be used by every row, can save disk space
+need high availability. HA means very little or no donwtime.  when an RDB fails, it needs to fail over to a backup system, which can take time.
+need horizontal scalability. ability to add more servers to the system. Many traditional relational databases cannot do otherise
+
+### What is postgreSQL
+- Open source object-relational database system
+- Has its own syntax (all RDBs have their own syntax and operations)
+
+***
+
+## NoSQL databases
+
+### What is a NoSQL Database?
+- simpler design
+- simpler horizontal scaling
+- finer control of availabbility
+- data structures are different
+- some operations are faster
 
 
+### Common Types of NoSQL Databases
+- Apache Cassandra (Partition Row store)
+- MongoDB (Document store)
+- DynamoDB (Key-value store)
+- Apache HBase (Wide Column Store)
+- Neo4J (Graph database -- nodes and edges)
+
+### The Basics of Apache Cassandra
+- Keyspace: collection of tables
+- Partition:
+  - funametnal unit of access
+  - collection of rows
+  - how data are distributed
+- Primary Key
+  - made up of a partition key and clustering columns
+- Columns
+  - Cluster and Data
+  - Labeled element
+
+### Good Use Cases:
+- Transaction logging (retail, health care)
+- Internet of Things (IoT)
+- Time series data
+- Any workload that is heavy on writes to the database (since Apache Cassandra is optimized for writes).
+- Large amounts of data
+- Need for horizontal scaling
+- Need high throughput fast reads and writes
+- Need a flexible schema
+- Need high availability
+- Need to be able to store different data type formats
+- Users are distributed geographically -- low latency
+
+### When not to use
+- Need ACID transactions.
+  - caveat: MongoDB has added multi-document ACID transactions within a single replica set and in a sharded/partitioned deployment. 
+- Need ability to do joins. NoSQL does not allow the ability to do JOINS. This will result in full table scans, which is highly frowned on.
+- Ability to do aggregations and analytics (possible with Spark, etc.)
+- Queries are not available in advance and need to have flexibility.  Ad-hoc queries are possible but difficult as the data model was done to fix particular queries
+- Have small dataset
 
 
-
-Data engineering focuses on creating the physical data model in relational and nonrelational databases
+Relational is great for joins and aggregations, but NoSQL is better when you have large amounts of data for which you need high availability or if you need to scale out quickly.
