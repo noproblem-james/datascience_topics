@@ -399,6 +399,7 @@ $ ls -l somefile
   - `-c` --check. tells shasum to "check" the provided input.  
   - example usage: `shasum -a 256 -c <<< '<hash_to_compare> *<filename>'` cool one-liner for checksum
 
+
 ### More on `man`, `apropos`, and `info`
 `man`
 - `–f` generates the same result as typing `whatis`.

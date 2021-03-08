@@ -1,5 +1,23 @@
 # Data Engineering
-Enables data driven decision making by collecting, profiling, storing, transforming, and visualizing data.
+## Overview
+Enables data driven decision-making by collecting, profiling, storing, transforming, and visualizing data.
+
+Data Engineering comprises all engineering and operational tasks required to make data available for the end-user, whether for the purposes of analytics, model building, app development, etc.
+Take raw data, do work to it, and deliver a clean dataset to whoever needs it.
+
+DS Hierarchy of needs:
+1. Collect,
+2. Move/store,
+3. explore/transform,
+4. aggregate/label,
+5. learn/optimize
+
+
+ Move Store: reliable data flow, infrastrucure, pipelines, etl, storage,
+Explore/Transform: cleaning anomaly detection, and prep.
+in some ways, a blend of a data scientist and a software engineer.
+core role: data warehouses, data lakes, and data pipelines
+
 Activities include but not limited to:
 - Data Acquisition
 - Data Profiling
@@ -17,8 +35,30 @@ Activities include but not limited to:
   - Business
     - Is it sensitive?
 
+#### Common activities:
+- ingest dataset
+- build and maintain warehouse
+- create a data pipeline, create an analytics
+- debug data quality issues, optimize queries, design databases
+- they do some amount of analytics and thus occasionally perform aggregations, but not their main focus
+- airflow: status of pipelines
+- look at metrics
+- build  pipeline, presto or spark
+- most of the day is spent writing code
+- try not to get too lost in tools.
+- focus on a couple of big names. airflow, redshift, spark, presto
+- tooling isn't standardized. better to be deep in a couple of important tools rather than broad across many tools
 
-Standardizing inconsistencies. E.g.,
+Databases: A database is a structured repository or collection of data that is stored and retrieved electronically for use in applications. Data can be stored, updated, or deleted from a database.
+
+Database Management System (DBMS): The software used to access the database by the user and application is the database management system. Check out these few links describing a DBMS in more detail.
+
+Data model - an abstraction that organizes elements of data and how they will relate to each other.
+data modeling can easily translate to databae modeling, as this is the essential end state. To be sure it is persisted and easily used.
+Difference between business and user applications
+
+
+### Standardizing inconsistencies. E.g.,
 
 Plan, design, implement, test, and operationalize.
 It's a process or a methodology.
@@ -67,54 +107,15 @@ Ingestion
  - Dashboards
  - Data storytelling
 
- # Ingestion
- -
+ <!-- # Ingestion
+ - -->
 
  ## Data Categories:
- - Structured: fixed schema - relational dataset
+- Structured: fixed schema - relational dataset
 - Semi-structured: Flexible schema: XML, JSON
 - Unstructured: No schema -  video, audio
 
 ***
-# Overview
-
-Data Engineering comprises all engineering and operational tasks required to make data available for the end-user, whether for the purposes of analytics, model building, app development, etc.
-Take raw data, do work to it, and deliver a clean dataset to whoever needs it.
-
-DS Hierarchy of needs:
-1. Collect,
-2. Move/store,
-3. explore/transform,
-4. aggregate/label,
-5. learn/optimize
-
-
- Move Store: reliable data flow, infrastrucure, pipelines, etl, storage,
-Explore/Transform: cleaning anomaly detection, and prep.
-in some ways, a blend of a data scientist and a software engineer.
-core role: data warehouses, data lakes, and data pipelines
-
-#### common activities:
-- ingest dataset
-- build and maintain warehouse
-- create a data pipeline, create an analytics
-- debug data quality issues, optimize queries, design databases
-- they do some amount of analytics and thus occasionally perform aggregations, but not their main focus
-- airflow: status of pipelines
-- look at metrics
-- build  pipeline, presto or spark
-- most of the day is spent writing code
-- try not to get too lost in tools.
-- focus on a couple of big names. airflow, redshift, spark, presto
-- tooling isn't standardized. better to be deep in a couple of important tools rather than broad across many tools
-
-Databases: A database is a structured repository or collection of data that is stored and retrieved electronically for use in applications. Data can be stored, updated, or deleted from a database.
-
-Database Management System (DBMS): The software used to access the database by the user and application is the database management system. Check out these few links describing a DBMS in more detail.
-
-Data model - an abstraction that organizes elements of data and how they will relate to each other.
-data modeling can easily translate to databae modeling, as this is the essential end state. To be sure it is persisted and easily used.
-Difference between business and user applications
 
 ### Data Modeling
 process to support business and user applications
@@ -216,7 +217,7 @@ need horizontal scalability. ability to add more servers to the system. Many tra
 
 ### When not to use
 - Need ACID transactions.
-  - caveat: MongoDB has added multi-document ACID transactions within a single replica set and in a sharded/partitioned deployment. 
+  - caveat: MongoDB has added multi-document ACID transactions within a single replica set and in a sharded/partitioned deployment.
 - Need ability to do joins. NoSQL does not allow the ability to do JOINS. This will result in full table scans, which is highly frowned on.
 - Ability to do aggregations and analytics (possible with Spark, etc.)
 - Queries are not available in advance and need to have flexibility.  Ad-hoc queries are possible but difficult as the data model was done to fix particular queries
