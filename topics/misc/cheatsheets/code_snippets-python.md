@@ -1,4 +1,4 @@
-# Python Code Snippets
+  # Python Code Snippets
 
 ### Conda
 `conda create --name myproject` create a new environment  
