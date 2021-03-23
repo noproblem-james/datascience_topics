@@ -1,22 +1,31 @@
-## Review and Demo Topics in Data Science
-Jupyter notebooks that combine code, visualizations, and examples.
+# Review and Demo Topics in Data Science
+Jupyter notebooks and markdown files that cover various topics in Data Science
 
-![](images/linear_log_regr.gif)
-![](images/poisson.png)
-Content so far:
+<!-- ![](images/linear_log_regr.gif)
+![](images/poisson.png) -->
+## Contents
 
-### Statistics
-- Probability Problems
+#### Probability and Statistics
+- Probability problems
 - Hypothesis testing
 - Statistical power calculations
-- Linear Regression and Logistic Regression
+- Linear regression and logistic regression
 
-### Data Manipulation
-- SQL and pandas comparison
-- MongoDB examples
+#### Machine Learning
+- ML Algorithm descriptions
+- Gradient descent and gradient boosting notebook
+- Machine learning quiz
 
-## Programming
-- Data Strucutres and Algorithms
+#### Data Engineering
+- SQL example notebooks
+- MongoDB example notebooks
+- Scala example notebooks
 
-### Machine Learning
-- Gradient Descent
+#### Programming
+- Data Structures and Algorithms
+- Command line and Linux reference docs
+- Docker, Kubernetes, and RedHat OpenShift reference docs
+- Python cheatsheet
+
+#### Misc
+- Data Science Methodologies
