@@ -1,4 +1,4 @@
-# Review and Demo Topics in Data Science
+# Review and Demo of Topics in Data Science
 Jupyter notebooks and markdown files that cover various topics in Data Science
 
 ## Contents
@@ -6,7 +6,7 @@ Jupyter notebooks and markdown files that cover various topics in Data Science
 #### Probability and Statistics
 - Probability problems notebook
 - Hypothesis testing notebook
-- Statistical power calculations notebooks
+- Statistical power calculation notebooks
 - Linear regression and logistic regression notebook
 
 #### Machine Learning
@@ -16,12 +16,12 @@ Jupyter notebooks and markdown files that cover various topics in Data Science
 
 #### Data Engineering
 - SQL practice notebooks
-- SQLAlchemy exmample notebooks
+- SQLAlchemy example notebooks
 - MongoDB example notebooks
-- Scala example notebooks
+- Scala example notebook
 
 #### Programming
-- Data structures and algorithms
+- Data structures and algorithms notebooks
 - Command line and Linux reference docs
 - Docker, Kubernetes, and RedHat OpenShift reference docs
 - Python cheatsheet
