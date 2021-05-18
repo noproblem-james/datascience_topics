@@ -1166,4 +1166,19 @@ or
 ### One-liners
 `ls -lt | head` list most recently added file in the directory  
 
-`cat nlu.json | jq '.apikey' -r` use jq to access value for key 'apikey', return raw results (no quotation marks)
+`cat nlu.json | jq '.apikey' -r` use jq to access value for key 'apikey', return raw results (no quotation marks)  
+
+`find . -iname "data*.txt" -print 2>/dev/null`
+ redirect the error messages (FD #2) to /dev/null, so you don’t have to see them on screen. Use /dev/null to to send any unwanted output from program/command. All data written on a /dev/null special file is discarded by the system  
+
+`grep -rnw '/path/to/somewhere/' -e 'pattern'`
+- `-r` or -R is recursive,
+- `-n` is line number, and
+- `-w` stands for match the whole word.
+- `-l` (lower-case L) can be added to just give the file name of matching files.
+- `-e` is the pattern used during the search
+
+
+`mkdir -p shared/projects/movies/action` to create the whole tree  
+
+`curl http://www.example.com/data.txt -O -J ` saves to filename determined by the Content-Disposition header sent by the server.
