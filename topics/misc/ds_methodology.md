@@ -17,7 +17,7 @@ CRISP-DM is a highly flexible and cyclical model. Flexibility is required at eac
 [Slides](https://www.slideshare.net/JohnBRollinsPhD/foundational-methodology-for-data-science)
 [Blog](https://web.archive.org/web/20200414234519/https://www.ibmbigdatahub.com/blog/why-we-need-methodology-data-science)
 
-￼![alternative data science methodology](/../../images/alternative_ds_methodology.png)
+￼![alternative data science methodology](../../images/alternative_ds_methodology.png)
 
 the chosen analytic approach determines the data requirements. Different methods require certain data content, formats and representations, guided by domain knowledge.
 Data Requirements stage of the data science methodology involves identifying the necessary data content, formats and sources for initial data collection.
