@@ -28,6 +28,7 @@ Jupyter notebooks and markdown files that cover various topics in Data Science
 
 #### Misc
 - Data science methodology
+- Linear algebra notebook
 
 
 <!-- ![](images/linear_log_regr.gif)

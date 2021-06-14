@@ -1,3 +1,4 @@
+
 # Guide to the Command Line
 
 ### Table of Contents
@@ -1182,3 +1183,6 @@ or
 `mkdir -p shared/projects/movies/action` to create the whole tree  
 
 `curl http://www.example.com/data.txt -O -J ` saves to filename determined by the Content-Disposition header sent by the server.
+
+create a compressed tar archive: `tar -czvf LotsOfFiles.tgz LotsOfFiles`
+uncompress a tar archive: `tar -xvf LotsOfFiles.tgz`
