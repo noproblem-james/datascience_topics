@@ -3,7 +3,7 @@
 ## Cross-Industry Process for Data Mining
 CRISP-DM methodology is a process aimed at increasing the use of data mining over a wide variety of business applications and industries. The intent is to take case specific scenarios and general behaviors to make them domain neutral.  CRISP-DM is comprised of six steps with an entity that has to implement in order to have a reasonable chance of success. The six steps are shown in the following diagram:
 
-![CRISP DM Diagram](../images/CRISP-DM_Process_Diagram.png)
+![CRISP DM Diagram](../../images/CRISP-DM_Process_Diagram.png)
 
 1. **Business Understanding** This stage is the most important because this is where the intention of the project is outlined. Foundational Methodology and CRISP-DM are aligned here. It requires communication and clarity. The difficulty here is that stakeholders have different objectives, biases, and modalities of relating information. They don’t all see the same things or in the same manner. Without clear, concise, and complete perspective of what the project goals are resources will be needlessly expended. 
 2. **Data Understanding Data** understanding relies on business understanding. Data is collected at this stage of the process. The understanding of what the business wants and needs will determine what data is collected, from what sources, and by what methods. CRISP-DM combines the stages of Data Requirements, Data Collection, and Data Understanding from the Foundational Methodology outline. 
@@ -17,7 +17,7 @@ CRISP-DM is a highly flexible and cyclical model. Flexibility is required at eac
 [Slides](https://www.slideshare.net/JohnBRollinsPhD/foundational-methodology-for-data-science)
 [Blog](https://web.archive.org/web/20200414234519/https://www.ibmbigdatahub.com/blog/why-we-need-methodology-data-science)
 
-￼![alternative data science methodology](../images/alternative_ds_methodology.png)
+￼![alternative data science methodology](../../images/alternative_ds_methodology.png)
 
 the chosen analytic approach determines the data requirements. Different methods require certain data content, formats and representations, guided by domain knowledge.
 Data Requirements stage of the data science methodology involves identifying the necessary data content, formats and sources for initial data collection.
