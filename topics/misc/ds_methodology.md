@@ -14,28 +14,27 @@ CRISP-DM methodology is a process aimed at increasing the use of data mining ove
 CRISP-DM is a highly flexible and cyclical model. Flexibility is required at each step along with communication to keep the project on track. At any of the six stages, it may be necessary to revisit an earlier stage and make changes.
 
 ## Elaborated Methodology
+(Courtesy of John B. Rollins, Ph.D.)
 [Slides](https://www.slideshare.net/JohnBRollinsPhD/foundational-methodology-for-data-science)
 [Blog](https://web.archive.org/web/20200414234519/https://www.ibmbigdatahub.com/blog/why-we-need-methodology-data-science)
-
 ￼![alternative data science methodology](../../images/alternative_ds_methodology.png)
 
-the chosen analytic approach determines the data requirements. Different methods require certain data content, formats and representations, guided by domain knowledge.
-Data Requirements stage of the data science methodology involves identifying the necessary data content, formats and sources for initial data collection.
-When collecting data, it is alright to defer decisions about unavailable data, and attempt to acquire it at a later stage.
-Data Collection stage, the data requirements are revised and decisions are made as to whether or not more data is needed.
-Descriptive statistics and visualization  can be applied to the data set to assess the content, quality, and initial insights about the data.
+1. **Business understanding**
+1. **Analytic approach** the chosen analytic approach determines the data requirements. Different methods require certain data content, formats and representations, guided by domain knowledge.
+1. **Data requirements** involves identifying the necessary data content, formats and sources for initial data collection.
+1. **Data requirements** it is alright to defer decisions about unavailable data, and attempt to acquire it at a later stage.
+1. **Data collection** the data requirements are revised and decisions are made as to whether or not more data is needed.
+1. **Data understanding** Descriptive statistics and visualization  can be applied to the data set to assess the content, quality, and initial insights about the data.
 Data Understanding: Is the data that you collected representative of the problem to be solved?  Iterative. Can loop back to data collection.
-Data Preparation: addresses missing or invalid values and removes duplicates, and ensures that everything is properly  Feature engineering is the process of using domain knowledge of the data to create features. Very time-consuming can be automated
-Modeling: build models that are either descriptive or predictive. play around with different algorithms to ensure  that the variables in play are actually required
-
+1. **Data preparation** addresses missing or invalid values and removes duplicates, and ensures that everything is properly  Feature engineering is the process of using domain knowledge of the data to create features. Very time-consuming can be automated
+1. **Modeling** build models that are either descriptive or predictive. play around with different algorithms to ensure  that the variables in play are actually required
 An example of a descriptive model might examine things like: if a person did this,
 then they're likely to prefer that.
 A predictive model tries to yield yes/no, or stop/go type outcomes.
 These models are based on the analytic approach that was taken, either statistically driven
 or machine learning driven. play around with different algorithms to ensure
 that the variables in play are actually required
-
-Evaluation: Evaluation allows the quality of the model to be assessed but it's also an opportunity
+1. **Evaluation** Evaluation allows the quality of the model to be assessed but it's also an opportunity
 to see if it meets the initial request.
 Evaluation answers the question: Does the model used really answer the initial question
 or does it need to be adjusted?
@@ -44,21 +43,18 @@ The first is the diagnostic measures phase, which is used to ensure the model is
 as intended. The second phase of evaluation that may be used is statistical significance testing.
 This type of evaluation can be applied to the model to ensure that the data is being
 properly handled and interpreted within the model
-
-Deployment
+1. **Deployment**
 While a data science model will provide an answer, the key to making the answer relevant
 and useful to address the initial question, involves getting the stakeholders familiar
 with the tool produced.
 In a business scenario, stakeholders have different specialties that will help make
 this happen, such as the solution owner, marketing, application developers, and IT administration.
-
-Feedback: the more you know, the more that you'll
+1. **Feedback** The more you know, the more that you'll
 want to know.
 iterative, ensuring the refinement at each stage in the game.
 John Rollins, IBM
 Your success within the data science field depends on your ability to apply the right
 tools, at the right time, in the right order, to the address the right problem.
-
 the true meaning of a methodology!
 That its purpose is to explain how to look at a problem, work with data in support of
 solving the problem, and come up with an answer that addresses the root problem.
